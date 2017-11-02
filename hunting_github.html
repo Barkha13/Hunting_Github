@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <title>Document</title>
+  <script>
+            $(document).ready(function(){
+                var button = document.getElementById("btn");
+                button.addEventListener("click", getAPI)
+                function getAPI(){
+                    $.get("https://api.github.com/users/Barkha13", displayName)
+                
+            // Notice that displayName is a function that takes in 1 parameter 
+            // (this is the data that comes back from the API)
+                function displayName(data) {
+                    var git_name = document.getElementById("git_name");
+                    git_name.append(data.name);
+                
+            }
+        }
+    
+                
+            });
+            
+            
+        </script>
+
+</head>
+<body>
+<button id="btn">Click Me</button>
+<p id="git_name"></p>
+</body>
+</html>
